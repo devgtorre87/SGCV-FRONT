@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>{{titleModal}}</h2>
+<mat-dialog-content class="mat-typography">
+  <form class="example-form" [formGroup]="form">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Id</label>
+          <input type="text" formControlName="id"  class="form-control" id="exampleInputEmail1" placeholder=""
+            aria-describedby="exampleInputEmail1-error" aria-invalid="true" readonly="true">
+          <!-- <span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a email address</span> -->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="txtNombreUsuario">Usuario</label>
+          <input type="text" formControlName="nombreUsuario" name="nombreUsuario" class="form-control" id="txtNombreUsuario"
+            placeholder="Ingrese nombre de usuario" aria-describedby="exampleInputEmail1-error" aria-invalid="true">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="txtNombreCompleto">Nombre Completo</label>
+          <input type="text" formControlName="nombreCompleto" name="nombreCompleto" class="form-control" id="txtNombreCompleto"
+            placeholder="Ingrese nombre completo" aria-describedby="exampleInputEmail1-error" aria-invalid="true">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="custom-control custom-checkbox">
+          <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked="">
+          <label for="customCheckbox2" class="custom-control-label">Activo</label>
+        </div>
+      </div>
+    </div>
+
+
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button color="warn"  mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Guardar</button>
+</mat-dialog-actions>

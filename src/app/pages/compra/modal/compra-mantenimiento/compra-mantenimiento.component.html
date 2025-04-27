@@ -1,0 +1,85 @@
+<h2 mat-dialog-title>{{titleModal}}</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="example-form">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Tipo Comporbante</label>
+                    <select class="form-control">
+                        <option>FACTURA</option>
+                        <option>BOLETA</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="txtNombreUsuario">Nro. Serie</label>
+                    <input type="text" formControlName="nombreUsuario" name="nombreUsuario" class="form-control"
+                        id="txtNombreUsuario" placeholder="Ingrese Nro. Serie"
+                        aria-describedby="exampleInputEmail1-error" aria-invalid="true">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtNombreUsuario">Nro. Comprobante</label>
+                    <input type="text" formControlName="nombreUsuario" name="nombreUsuario" class="form-control"
+                        id="txtNombreUsuario" placeholder="Ingrese Nro. Comprobante"
+                        aria-describedby="exampleInputEmail1-error" aria-invalid="true">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="txtNombreUsuario">Fecha de Emisión</label>
+                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate">
+                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Proveedor</label>
+                    <select class="form-control">
+                        <option>FARMACIA UNIVERSAL S.A.C.</option>
+                        <option>PROVEEDORES DEL PERU</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Moneda</label>
+                    <select class="form-control">
+                        <option>SOLES</option>
+                        <option>DOLARES</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <button mat-flat-button color="primary" mat-dialog-close>Agregar Producto</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <app-table [data]="productosComprobante" [columns]="tableColumns" [config]="tableConfig"
+                    (action)="onTableAction($event)"></app-table>
+            </div>
+        </div>
+
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-flat-button color="warn" mat-dialog-close>Cancelar</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Guardar</button>
+</mat-dialog-actions>

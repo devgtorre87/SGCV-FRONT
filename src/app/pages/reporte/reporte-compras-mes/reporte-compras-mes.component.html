@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Filtro de Reporte</h3>
+
+                <div class="card-tools">
+                    <button mat-flat-button color="primary">BUSCAR</button>
+
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="txtNombreUsuario">Mes</label>
+                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input"
+                                    data-target="#reservationdate" value="2024/01">
+                                <div class="input-group-append" data-target="#reservationdate"
+                                    data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-md-12">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Listado de Compras por Mes</h3>
+
+                <div class="card-tools">
+                    <button style="background-color: red;" mat-flat-button color="primary">PDF</button>
+                    <button style="margin-left: 5px; background-color: green;" mat-flat-button
+                        color="primary">EXCEL</button>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body" style="display: block;">
+                <app-table [data]="dataReporte" [columns]="tableColumns" [config]="tableConfig"></app-table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
